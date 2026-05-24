@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Conctete.Category
+@{
+    ViewData["Title"] = "EditCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>EditCategory</h1>
+@using (Html.BeginForm("EditCategory", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kategori ID")
+        @Html.TextBoxFor(x=>x.CategoryID, new {@class= "form-control"})
+        <br />
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x=>x.CategoryName, new {@class= "form-control"})
+        <br />
+        @Html.Label("Kategori Açıklaması")
+        @Html.TextAreaFor(x => x.CategoryDescription,new { @class = "form-control"})
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+    
+}
